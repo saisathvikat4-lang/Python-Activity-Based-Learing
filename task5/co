@@ -1,0 +1,69 @@
+
+
+distance = float(input("Enter journey distance (km): "))
+n = int(input("Enter number of passengers: "))
+
+
+if distance <= 100:
+    base_rate = 1.00
+elif distance <= 500:
+    base_rate = 1.50
+else:
+    base_rate = 2.00
+
+class_rates = {
+    "Sleeper": 1.0,
+    "AC3": 2.0,
+    "AC2": 3.0
+}
+
+reservation_fee = 40
+total_fare = 0
+
+for i in range(n):
+    print(f"\nPassenger {i + 1}")
+    name = input("Enter name: ")
+    age = int(input("Enter age: "))
+    travel_class = input(
+        "Enter class (Sleeper/AC3/AC2): "
+    ).strip()
+
+    if travel_class not in class_rates:
+        print("Invalid class. Passenger skipped.")
+        continue
+
+    base_fare = distance * base_rate * class_rates[travel_class]
+
+  
+    if age < 5:
+        concession = base_fare
+    elif age >= 60:
+        concession = base_fare * 0.40
+    else:
+        concession = 0
+
+    fare_after_concession = base_fare - concession
+    paid_fare = fare_after_concession + reservation_fee
+
+    cancelled = input("Cancel ticket? (yes/no): ").lower()
+
+    if cancelled == "yes":
+        penalty = paid_fare * 0.25
+        final_fare = paid_fare - penalty
+        print("Cancellation penalty: Rs", round(penalty, 2))
+        print("Refund amount: Rs", round(final_fare, 2))
+        print("Status: Cancelled")
+    else:
+        final_fare = paid_fare
+        print("Status: Confirmed")
+        print("Final fare: Rs", round(final_fare, 2))
+
+    print("Passenger:", name)
+    print("Base fare: Rs", round(base_fare, 2))
+    print("Concession: Rs", round(concession, 2))
+    print("Reservation fee: Rs", reservation_fee)
+
+    total_fare += final_fare
+
+print("\nTotal amount after cancellations: Rs",
+      round(total_fare, 2))
