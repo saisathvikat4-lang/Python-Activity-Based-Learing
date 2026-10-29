@@ -1,11 +1,8 @@
 # University Scholarship Allocation System in Python
-
 ## 1. Problem Statement
-
 To develop a Python program that evaluates scholarship applicants based on aggregate marks, subject-wise minimum marks, attendance, and family income. The program selects eligible students, ranks them by aggregate marks, and resolves ties using attendance and lower family income.
 
 ## 2. Algorithm
-
 1. Start the program.
 2. Input the number of students and their details.
 3. Check subject-wise minimum marks, aggregate marks, attendance, and income.
@@ -13,10 +10,8 @@ To develop a Python program that evaluates scholarship applicants based on aggre
 5. Rank eligible students by aggregate marks, attendance, and lower income.
 6. Display the ranked scholarship list.
 7. Stop.
-
 ## 3. Short Flowchart 
-
-...marmaine
+```mermaid
 flowchart TD
     A([Start]) --> B[/Input student details/]
     B --> C{Meets all criteria?}
@@ -28,9 +23,8 @@ flowchart TD
     F -- No --> G[Rank eligible students]
     G --> H[/Display scholarship list/]
     H --> I([Stop])
-'''
+```
 ## 5. Sample Input
-
 
 Enter number of students: 3
 
