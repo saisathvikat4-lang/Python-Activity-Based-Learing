@@ -29,7 +29,7 @@ Billing Criteria (Example):
 8. Stop.
 
 ## 3. Flowchart (Mermaid)
-'''mermaid
+```mermaid
 flowchart TD
 A([Start]) --> B[Enter Monthly Units]
 B --> C[Calculate Slab Charges]
@@ -37,7 +37,7 @@ C --> D[Apply Fixed Charge, Surcharge & Rebate]
 D --> E[Compare Monthly Bills]
 E --> F[Display Bills & Alerts]
 F --> G([Stop])
-'''
+```
 
 ## 5. Sample Input
 
